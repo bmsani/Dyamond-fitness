@@ -1,18 +1,54 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
+import Loading from '../Loading/Loading';
 
 const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useSignInWithEmailAndPassword(auth);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
+      const handleEmail = event => {
+        setEmail(event.target.value)
+      }
+      const handlePassword = event => {
+          setPassword(event.target.value);
+      }
+      const handleSubmit = event => {
+          event.preventDefault();
+          signInWithEmailAndPassword(email, password);
+      }
+    
+    if(loading){
+        return <Loading></Loading>
+    }  
+
+    if(user){
+        navigate(from, {replace: true})
+    }
+    
+
     return (
         <div>
-            <Form className='w-50 mx-auto'>
+            <Form onSubmit={handleSubmit} className='w-50 mx-auto mt-5'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Control onBlur={handleEmail} type="email" placeholder="Enter email" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control onBlur={handlePassword} type="password" placeholder="Password" />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
@@ -20,6 +56,7 @@ const Login = () => {
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
+                <p>New to xxx <Link className='btn btn-link' to='/register'>Please Register</Link></p>
             </Form>
         </div>
     );
