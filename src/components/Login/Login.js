@@ -54,11 +54,11 @@ const Login = () => {
         <div>
             <Form onSubmit={handleSubmit} className='w-50 mx-auto mt-5'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control onBlur={handleEmail} type="email" placeholder="Enter email" />
+                    <Form.Control onBlur={handleEmail} type="email" placeholder="Enter email" required/>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Control onBlur={handlePassword} type="password" placeholder="Password" />
+                    <Form.Control onBlur={handlePassword} type="password" placeholder="Password" required/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />

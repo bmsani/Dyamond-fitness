@@ -45,16 +45,16 @@ const Register = () => {
                 <h1 className='text-center'>Register</h1>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control onBlur={handleEmail} type="email" placeholder="Enter email" />
+                    <Form.Control onBlur={handleEmail} type="email" placeholder="Enter email" required/>
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control onBlur={handlePassword} type="password" placeholder="Password" />
+                    <Form.Control onBlur={handlePassword} type="password" placeholder="Password" required/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Confirm Password</Form.Label>
-                    <Form.Control onBlur={handleConfirmPassword} type="password" placeholder="Confirm Password" />
+                    <Form.Control onBlur={handleConfirmPassword} type="password" placeholder="Confirm Password" required/>
                 </Form.Group>
                 <p>{error}</p>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
