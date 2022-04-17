@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -15,6 +15,7 @@ const Login = () => {
         loading,
         error,
       ] = useSignInWithEmailAndPassword(auth);
+      const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -29,6 +30,15 @@ const Login = () => {
       const handleSubmit = event => {
           event.preventDefault();
           signInWithEmailAndPassword(email, password);
+      }
+
+      const handleResetPassword = async() => {
+            if(email){
+                await sendPasswordResetEmail(email);
+                alert('Email sent')
+            }else{
+                console.log('email invalide');
+            }
       }
     
     if(loading){
@@ -56,7 +66,8 @@ const Login = () => {
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
-                <p>New to xxx <Link className='btn btn-link' to='/register'>Please Register</Link></p>
+                <p className='mb-0'>New to xxx<Link className='btn btn-link' to='/register'>Please Register</Link></p>
+                <p>Forget Password?<button className='btn btn-link' onClick={handleResetPassword}> Reset password</button></p>
             </Form>
         </div>
     );
