@@ -51,7 +51,7 @@ const Register = () => {
     return (
         <div>
             <Form className='w-50 mx-auto' onSubmit={handleFormSubmit}>
-                <h1 className='text-center'>Register</h1>
+                <h1 className='text-center text-primary mt-3'>Register</h1>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control onBlur={handleEmail} type="email" placeholder="Enter email" required/>

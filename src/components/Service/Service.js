@@ -11,7 +11,7 @@ const Service = ({service}) => {
            <h2 className='text-center text-primary'>{name}</h2>
            <h4 className='text-dark text-center'>Price: {price}</h4>
            <p><span className='fw-bold'>Service details:</span> {shortText}</p>
-           <button onClick={() => navigate('/checkout')} className='btn btn-primary w-75 d-block mx-auto'> Book {name}</button>
+           <button onClick={() => navigate('/checkout')} className='btn rounded-pill btn-primary w-75 d-block mx-auto'> Book {name}</button>
            
         </div>
     );
