@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import Loading from '../Loading/Loading';
 
 const Register = () => {
     const [email, setEmail] = useState('');
@@ -11,6 +12,8 @@ const Register = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
     const [
         createUserWithEmailAndPassword,
         user,
@@ -36,9 +39,14 @@ const Register = () => {
           createUserWithEmailAndPassword(email, password)
 
       };
-      useEffect(()=>{
-          
-      },[user])
+      if(loading){
+          return <Loading></Loading>
+      }
+
+      if(user){
+          navigate(from);
+      }
+
 
     return (
         <div>
