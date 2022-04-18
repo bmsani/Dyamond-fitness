@@ -22,11 +22,23 @@ const Home = () => {
             <Services></Services>
 
             <div>
-                <div>
-                    <div class="input-group input-group-lg">
-                        <h1>Contact Us</h1>
-                        <span class="input-group-text" id="inputGroup-sizing-lg">Large</span>
-                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"/>
+                <h1 className='text-center text-primary my-5'>Contact Us</h1>
+                <div className='w-75 mx-auto my-5'>
+                    <div class="input-group input-group-lg mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">First Name</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" />
+                    </div>
+                    <div class="input-group input-group-lg mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">Last Name</span>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" />
+                    </div>
+                    <div class="input-group input-group-lg mb-3">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">Email</span>
+                        <input type="email" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" />
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-text">Your message</span>
+                        <textarea class="form-control" aria-label="With textarea"></textarea>
                     </div>
                 </div>
             </div>
