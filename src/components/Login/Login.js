@@ -74,7 +74,7 @@ const Login = () => {
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
-                <p className='mb-0'>New to xxx<Link className='btn btn-link' to='/register'>Please Register</Link></p>
+                <p className='mb-0'>New to Dyamond Fitness<Link className='btn btn-link' to='/register'>Please Register</Link></p>
                 <p>Forget Password?<button className='btn btn-link' onClick={handleResetPassword}> Reset password</button></p>
                 <SocialLogin></SocialLogin>
                 <ToastContainer />
