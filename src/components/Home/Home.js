@@ -40,6 +40,7 @@ const Home = () => {
                         <span class="input-group-text">Your message</span>
                         <textarea class="form-control" aria-label="With textarea"></textarea>
                     </div>
+                    <button className='w-25 mx-auto mt-3 rounded-pill d-block btn btn-primary fw-bold'> Send</button>
                 </div>
             </div>
         </div>
