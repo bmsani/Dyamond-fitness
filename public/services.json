@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Online Yoga class",
+        "price": "100",
+        "description": "My daily timetable of live Yoga classes allows you to experience the thrill of training with the dyamond fitness team no matter where you are in the world.",
+        "img": "https://i.ibb.co/s9pzgXm/2.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Personal Trainer",
+        "price": "500",
+        "description": "If you are Looking for fat loss programme that will burn your fat and provide you with exactly what you need to attain results, then contact me.",
+        "img": "https://i.ibb.co/qDhR1TM/4.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Consultation",
+        "price": "250",
+        "description": " What to start your workout but don't sure what you need to do? it's a common problem because there is so much misinformation. contact me for consultation",
+        "img": "https://i.ibb.co/BGYDsjx/5.jpg"
+    }
+]
