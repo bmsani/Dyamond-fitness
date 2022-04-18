@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import GoogleIcon from '../../images/Social-icon/search.png'
 import Loading from '../Loading/Loading';
@@ -17,6 +18,9 @@ const SocialLogin = () => {
 
     if(loading){
         return <Loading></Loading>
+    }
+    if(error){
+        toast(error.message)
     }
 
     return (
